@@ -1,7 +1,7 @@
 %define drupaldir %{_datadir}/drupal6
 Name: drupal6
 Version:  6.19
-Release:  1%{?dist}
+Release:  2%{?dist}
 Summary: An open-source content-management platform
 
 Group: Applications/Publishing
@@ -81,6 +81,9 @@ rm -rf %{buildroot}
 %dir %attr(775,root,apache) %{_localstatedir}/lib/%{name}/files/default/
 
 %changelog
+* Tue Feb 08 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 6.19-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
+
 * Thu Aug 12 2010 Jon Ciesla <limb@jcomserv.net> - 6.19-1
 - Update to 6.19, SA-CORE-2010-002.
 - Moved .htaccess to /etc/httpd/conf.d/drupal6-site.htaccess and symlinked, per review.
