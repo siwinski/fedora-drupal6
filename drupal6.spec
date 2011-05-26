@@ -1,6 +1,6 @@
 %define drupaldir %{_datadir}/drupal6
 Name: drupal6
-Version:  6.20
+Version:  6.22
 Release:  1%{?dist}
 Summary: An open-source content-management platform
 
@@ -81,6 +81,9 @@ rm -rf %{buildroot}
 %dir %attr(775,root,apache) %{_localstatedir}/lib/%{name}/files/default/
 
 %changelog
+* Thu May 26 2011 Jon Ciesla <limb@jcomserv.net> - 6.22-1
+- Update to 6.22, SA-CORE-2011-001.
+
 * Thu Feb 24 2011 Jon Ciesla <limb@jcomserv.net> - 6.20-1
 - Update to 6.20.
 
