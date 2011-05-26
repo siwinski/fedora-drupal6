@@ -28,7 +28,7 @@ configurable, skinnable, and secure.
 
 %setup -q -n drupal-%{version}
 
-%patch0
+%patch0 -p1
 chmod -x scripts/drupal.sh
 
 %build
