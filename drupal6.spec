@@ -1,7 +1,7 @@
 %define drupaldir %{_datadir}/drupal6
 Name: drupal6
 Version:  6.22
-Release:  1%{?dist}
+Release:  2%{?dist}
 Summary: An open-source content-management platform
 
 Group: Applications/Publishing
@@ -81,6 +81,9 @@ rm -rf %{buildroot}
 %dir %attr(775,root,apache) %{_localstatedir}/lib/%{name}/files/default/
 
 %changelog
+* Fri Jun 17 2011 Jon Ciesla <limb@jcomserv.net> - 6.22-2
+- Bump and rebuild for BZ 712251.
+
 * Thu May 26 2011 Jon Ciesla <limb@jcomserv.net> - 6.22-1
 - Update to 6.22, SA-CORE-2011-001.
 
