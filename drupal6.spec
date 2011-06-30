@@ -1,7 +1,7 @@
 %define drupaldir %{_datadir}/drupal6
 Name: drupal6
 Version:  6.22
-Release:  2%{?dist}
+Release:  3%{?dist}
 Summary: An open-source content-management platform
 
 Group: Applications/Publishing
@@ -42,8 +42,6 @@ mkdir -p %{buildroot}%{_sysconfdir}/httpd
 mkdir -p %{buildroot}%{_sysconfdir}/httpd/conf.d
 cp -pr %SOURCE1 %{buildroot}%{_sysconfdir}/httpd/conf.d/%{name}.conf
 mkdir -p %{buildroot}%{_sysconfdir}/%{name}
-mkdir -p %{buildroot}%{_sysconfdir}/%{name}/modules
-mkdir -p %{buildroot}%{_sysconfdir}/%{name}/themes
 mv %{buildroot}%{drupaldir}/sites/* %{buildroot}%{_sysconfdir}/%{name}
 rmdir %{buildroot}%{drupaldir}/sites
 ln -s ../../..%{_sysconfdir}/%{name} %{buildroot}%{drupaldir}/sites
@@ -81,6 +79,9 @@ rm -rf %{buildroot}
 %dir %attr(775,root,apache) %{_localstatedir}/lib/%{name}/files/default/
 
 %changelog
+* Thu Jun 30 2011 Jon Ciesla <limb@jcomserv.net> - 6.22-3
+- Drop unneeded dirs in /etc/drupal6, BZ 706735.
+
 * Fri Jun 17 2011 Jon Ciesla <limb@jcomserv.net> - 6.22-2
 - Bump and rebuild for BZ 712251.
 
