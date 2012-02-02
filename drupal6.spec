@@ -1,7 +1,7 @@
 %define drupaldir %{_datadir}/drupal6
 Name: drupal6
-Version:  6.22
-Release:  4%{?dist}
+Version:  6.24
+Release:  1%{?dist}
 Summary: An open-source content-management platform
 
 Group: Applications/Publishing
@@ -79,6 +79,9 @@ rm -rf %{buildroot}
 %dir %attr(775,root,apache) %{_localstatedir}/lib/%{name}/files/default/
 
 %changelog
+* Thu Feb 02 2012 Jon Ciesla <limburgher@gmail.com> - 6.24-1
+- New upstream, 786769.
+
 * Fri Jan 13 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 6.22-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
 
