@@ -1,7 +1,7 @@
 %define drupaldir %{_datadir}/drupal6
 Name: drupal6
 Version:  6.26
-Release:  3%{?dist}
+Release:  4%{?dist}
 Summary: An open-source content-management platform
 
 Group: Applications/Publishing
@@ -79,6 +79,9 @@ rm -rf %{buildroot}
 %dir %attr(775,root,apache) %{_localstatedir}/lib/%{name}/files/default/
 
 %changelog
+* Wed Oct 31 2012 Jon Ciesla <limburgher@gmail.com> - 6.26-4
+- Fix conf.
+
 * Tue Oct 30 2012 Jon Ciesla <limburgher@gmail.com> - 6.26-3
 - Fix for httpd 2.4, BZ 871392.
 
