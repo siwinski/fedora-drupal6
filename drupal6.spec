@@ -1,7 +1,7 @@
 %define drupaldir %{_datadir}/drupal6
 Name: drupal6
 Version:  6.26
-Release:  4%{?dist}
+Release:  5%{?dist}
 Summary: An open-source content-management platform
 
 Group: Applications/Publishing
@@ -13,6 +13,7 @@ Source2: drupal-README.fedora
 Source3: %{name}-cron
 Source4: drupal-files-migrator.sh
 Patch0: drupal-6.0-scripts-noshebang.patch
+Patch1: json-encode-fix-1086098-90.patch
 
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -29,6 +30,7 @@ configurable, skinnable, and secure.
 %setup -q -n drupal-%{version}
 
 %patch0 -p1
+%patch1 -p1
 chmod -x scripts/drupal.sh
 
 %build
@@ -79,6 +81,9 @@ rm -rf %{buildroot}
 %dir %attr(775,root,apache) %{_localstatedir}/lib/%{name}/files/default/
 
 %changelog
+* Fri Nov 16 2012 Jon Ciesla <limburgher@gmail.com> - 6.26-5
+- JSON patch.
+
 * Wed Oct 31 2012 Jon Ciesla <limburgher@gmail.com> - 6.26-4
 - Fix conf.
 
