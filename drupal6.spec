@@ -1,7 +1,7 @@
 %define drupaldir %{_datadir}/drupal6
 Name: drupal6
 Version:  6.28
-Release:  1%{?dist}
+Release:  2%{?dist}
 Summary: An open-source content-management platform
 
 Group: Applications/Publishing
@@ -81,6 +81,9 @@ rm -rf %{buildroot}
 %dir %attr(775,root,apache) %{_localstatedir}/lib/%{name}/files/default/
 
 %changelog
+* Wed Feb 13 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 6.28-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
+
 * Thu Jan 17 2013 Jon Ciesla <limburgher@gmail.com> - 6.28-1
 - 6.28, SA-CORE-2013-001.
 
